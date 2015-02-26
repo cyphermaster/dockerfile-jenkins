@@ -2,8 +2,16 @@
 Jenkins Master with external uid/gid capabilities
 
 # exemple run
-docker run --name jenkins-master  -e uid=30002 -e gid=30002 -d -p 127.0.0.1:8091:8080 -v /opt/docker-volumes/jenkins:/var/jenkins_home cyphermaster/jenkins
-
+~~~~
+docker run \
+    --name jenkins-master  \
+    -e uid=30002 \
+    -e gid=30002 \
+    -d \
+    -p 127.0.0.1:8091:8080 \
+    -v /opt/docker-volumes/jenkins:/var/jenkins_home \
+    cyphermaster/jenkins
+~~~~
 # cfengine incomplete snippet
 ~~~~
 bundle agent app_ci_jenkins_autorun
